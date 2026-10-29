@@ -1,44 +1,382 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>陈晓超专属平台</title><style>
-:root{--bg:#f6f5ef;--card:#fffefa;--green:#234d3b;--sage:#dce8dc;--blue:#dfe8f0;--lav:#e9e5f1;--sand:#eee5d7;--ink:#24352d;--muted:#718078;--line:#e6e8df}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}.shell{max-width:1050px;margin:auto;padding:20px 18px 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;background:var(--green);color:white;border-radius:15px;display:grid;place-items:center;font-size:22px}.brand h1{font-size:20px;margin:0}.muted,small{color:var(--muted)}button{font:inherit;cursor:pointer;border:0}.switch,.secondary{background:var(--sage);color:var(--green);border-radius:12px;padding:10px 13px;font-weight:650}.hero{padding:28px;border-radius:25px;background:linear-gradient(110deg,#e1ebe4ed,#f1eee4ee),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80') center/cover;box-shadow:0 8px 28px #233b2b0b}.hero h2{font-size:clamp(24px,4vw,35px);line-height:1.2;margin:8px 0}.eyebrow{color:var(--green);font-weight:750;letter-spacing:1px;font-size:12px}.quote{color:#52675b}.stats,.grid{display:grid;gap:13px;margin-top:17px}.stats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(4,1fr)}.stat,.card,.panel,.task{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}.stat strong{display:block;font-size:23px}.section{display:flex;justify-content:space-between;align-items:center;margin:26px 0 12px}.section h2{margin:0;font-size:20px}.learning{text-align:left;min-height:135px;border-radius:18px;padding:17px;color:var(--ink);box-shadow:0 8px 28px #233b2b0b}.learning b{display:block;margin:10px 0 3px}.emoji{font-size:26px}.sage{background:var(--sage)}.blue{background:var(--blue)}.lav{background:var(--lav)}.sand{background:var(--sand)}.tasklist{display:grid;gap:10px}.task{display:flex;align-items:center;gap:12px;cursor:pointer}.taskicon{font-size:22px;background:var(--sage);padding:10px;border-radius:12px}.taskmain{flex:1}.taskmain b{display:block}.pill{border-radius:30px;background:#f2e7d5;color:#765c31;padding:5px 9px;font-size:11px}.done{background:#deebdf;color:#2c6241}.page{display:none}.page.active{display:block}.navwrap{position:fixed;bottom:0;left:0;right:0;background:#fffefaf2;border-top:1px solid var(--line);backdrop-filter:blur(12px)}nav{max-width:650px;margin:auto;display:flex;justify-content:space-around;padding:9px}nav button{background:transparent;color:var(--muted);padding:8px 13px;border-radius:12px;font-size:12px}nav button.active{background:var(--sage);color:var(--green)}nav span{display:block;font-size:20px}.detail{max-width:800px;margin:auto}.back{background:transparent;color:var(--green);padding:8px 0;font-weight:700}.panel{margin-top:14px;padding:22px}.exercise{padding:14px;border:1px solid var(--line);border-radius:13px;margin:12px 0}.exercise input,.field input,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;margin-top:8px}.primary{background:var(--green);color:white;border-radius:12px;padding:12px 15px;font-weight:700}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.bar{height:9px;border-radius:20px;background:#e7eae2;margin:10px 0;overflow:hidden}.bar span{display:block;background:var(--green);height:100%}.field{margin:12px 0}.field label{display:block;font-weight:650}.toast{display:none;position:fixed;top:15px;left:50%;transform:translateX(-50%);background:var(--green);color:white;padding:12px 18px;border-radius:12px;z-index:5}@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:span 2}.brand h1{font-size:16px}.switch{font-size:12px;padding:8px}.shell{padding:14px 12px 90px}.hero{padding:22px}}@media(max-width:400px){nav button{padding:7px 8px}}
-</style></head><body><div class="toast" id="toast"></div><div class="shell">
-<header class="top"><div class="brand"><div class="logo">雪</div><div><h1>陈晓超专属平台</h1><small>Tu espacio personal de español</small></div></div><button class="switch" id="switch">👤 陈晓超 · Alumno ▾</button></header>
-<section id="home" class="page active"><div class="hero"><div class="eyebrow" id="welcome">BIENVENIDO, 陈晓超</div><h2>每一天，都离流利西班牙语更近一步。</h2><div class="quote">Cada día estás un paso más cerca de hablar español con confianza.</div></div><div class="stats"><div class="stat">🔥<strong>3 días</strong><small>Racha actual</small></div><div class="stat">✓<strong id="count">1/4</strong><small>Tareas completadas</small></div><div class="stat">◷<strong>35 min</strong><small>Esta semana</small></div></div><div class="section"><h2>¿Qué vamos a aprender hoy?</h2></div><div class="grid"><button class="learning sage" data-page="vocab"><span class="emoji">📚</span><b>Vocabulario</b><small>词汇 · Palabras útiles</small></button><button class="learning blue" data-page="grammar"><span class="emoji">✍️</span><b>Gramática</b><small>语法 · Estructuras</small></button><button class="learning lav" data-page="pronunciation"><span class="emoji">🎧</span><b>Pronunciación</b><small>发音 · Escucha y habla</small></button><button class="learning sand" data-page="reading"><span class="emoji">📖</span><b>Lectura</b><small>阅读 · Comprensión</small></button></div><div class="section"><h2>Tus próximas tareas</h2><button class="secondary" data-page="tasks">Ver todas</button></div><div class="tasklist" id="homeTasks"></div></section>
-<section id="tasks" class="page"><div class="section"><h2>Tareas · 任务</h2></div><div class="panel"><div id="filters"><button class="secondary" data-filter="all">Todas</button> <button class="secondary" data-filter="pending">Pendientes</button> <button class="secondary" data-filter="done">Completadas</button></div><div class="tasklist" id="tasksList" style="margin-top:14px"></div></div></section>
-<section id="detail" class="page"><div class="detail" id="detailContent"></div></section>
-<section id="vocab" class="page"><div class="section"><h2>Vocabulario · 词汇</h2></div><div class="grid" id="vocabGrid"></div><div class="panel" id="vocabInfo">Pulsa una palabra para ver su ejemplo.</div></section>
-<section id="grammar" class="page"><div class="section"><h2>Gramática · 语法</h2></div><div class="panel"><h2>El verbo ser · 动词 ser</h2><p>Usamos <b>ser</b> para identidad, profesión y características.</p><p>“Ser” 用于表达身份、职业和特征。</p><p>Yo soy = 我是 · Tú eres = 你是 · Él/Ella es = 他/她是</p><div class="exercise"><b>Completa: Yo ___ de China.</b><input id="grammarAnswer" placeholder="Escribe la forma correcta"><button class="primary" onclick="checkGrammar()">Comprobar</button><p id="grammarFeedback" class="muted"></p></div></div></section>
-<section id="pronunciation" class="page"><div class="section"><h2>Pronunciación · 发音</h2></div><div class="panel"><h2>Las vocales españolas · 西班牙语元音</h2><div class="grid"><button class="learning sage" onclick="speak('A, agua')">🔊 <b>A</b><small>agua · 水</small></button><button class="learning blue" onclick="speak('E, elefante')">🔊 <b>E</b><small>elefante · 大象</small></button><button class="learning lav" onclick="speak('I, isla')">🔊 <b>I</b><small>isla · 岛</small></button><button class="learning sand" onclick="speak('O, oso, U, uva')">🔊 <b>O · U</b><small>oso · uva</small></button></div><p class="muted">Usa la voz disponible en tu navegador. No incluye evaluación automática.</p></div></section>
-<section id="reading" class="page"><div class="section"><h2>Lectura · 阅读</h2></div><div class="panel"><span class="pill">Nivel A1</span><h2>Me llamo Xiao Chao</h2><p style="font-size:18px">Hola, me llamo Xiao Chao. Soy de China y vivo en España. Estoy aprendiendo español porque quiero hablar con más personas.</p><button class="secondary" id="translationToggle">Mostrar traducción 中文</button><p id="translation" hidden>你好，我叫晓超。我来自中国，现在住在西班牙。我正在学习西班牙语，因为我想和更多的人交流。</p><div class="exercise"><b>¿Dónde vive Xiao Chao?</b><p><button class="secondary" onclick="readAnswer(false)">En China</button> <button class="secondary" onclick="readAnswer(true)">En España</button></p><p id="readFeedback"></p></div></div></section>
-<section id="progress" class="page"><div class="section"><h2>Progreso · 学习进度</h2></div><div class="panel" id="progressSummary"></div></section>
-<section id="profile" class="page"><div class="section"><h2>Perfil · 个人资料</h2></div><div class="panel"><h2 id="profileName">陈晓超</h2><p id="profileRole">Alumno · Nivel A1</p><p>Profesora · 老师: 陳老師</p><p>Objetivo diario: 15 minutos</p><button class="secondary" onclick="switchRole()">Cambiar vista alumno/profesora</button><p class="muted">El cambio de rol es una demostración, no un control de acceso seguro.</p></div></section>
-<section id="teacher" class="page"><div class="section"><h2>Panel de 陳老師</h2></div><div class="stats"><div class="stat">📝<strong id="pendingCount">3</strong><small>Pendientes</small></div><div class="stat">✓<strong id="doneCount">1</strong><small>Completadas</small></div><div class="stat">📚<strong>4</strong><small>Materiales demo</small></div></div><div class="panel"><h2>Crear tarea</h2><div class="field"><label>Título / 标题</label><input id="newTitle" placeholder="Ej. Los números"></div><div class="field"><label>Instrucciones / 说明</label><textarea id="newPrompt" rows="3" placeholder="Instrucciones de la actividad"></textarea></div><button class="primary" onclick="createTask()">Crear tarea</button><p class="muted">En esta versión los datos se guardan en este navegador; la sincronización entre dispositivos se añadirá al conectar Supabase.</p></div><div class="panel"><h2>Biblioteca de ejemplo</h2><p>Los saludos · El verbo ser · Las vocales · Mi primera lectura</p></div></section>
-</div><div class="navwrap"><nav id="nav"><button class="active" data-page="home"><span>⌂</span>Inicio</button><button data-page="tasks"><span>☷</span>Tareas</button><button data-page="progress"><span>◔</span>Progreso</button><button data-page="profile"><span>♙</span>Perfil</button></nav></div>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>陈晓超专属平台 · Español</title>
+<style>
+:root{--ink:#243044;--muted:#6b7280;--paper:#fffdf8;--purple:#7257d9;--pink:#ffb8c6;--mint:#b8ead8;--yellow:#ffe29a;--line:#eee8df}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:11px 16px;font-weight:700;background:var(--purple);color:white}button.secondary{background:#f0ecff;color:#4b399f}button.ghost{background:white;color:var(--ink);border:1px solid var(--line)}button:disabled{opacity:.5;cursor:not-allowed}
+header{padding:16px max(16px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);background:#fffdf8;position:sticky;top:0;z-index:3}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;border-radius:16px;background:var(--yellow);display:grid;place-items:center;font-size:20px;font-weight:800}.brand h1{font-size:18px;margin:0}.brand small{color:var(--muted)}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 70px}.hero{background:linear-gradient(120deg,#f0ecff,#fff0f3 65%,#e7fbf3);border-radius:28px;padding:32px;display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.hero h2{font-size:clamp(28px,4vw,42px);line-height:1.12;margin:12px 0}.hero p{color:#4d5667;max-width:620px}.hero-art{font-size:82px;text-align:center}.tag{display:inline-block;border-radius:999px;padding:5px 11px;background:white;font-size:13px;font-weight:800}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}.section-head h2{margin:0;font-size:23px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 6px 20px #33220a08}.card h3{margin:10px 0 5px}.emoji{font-size:34px}.card p{color:var(--muted);margin:0 0 16px}.pill{font-size:12px;font-weight:800;padding:4px 9px;border-radius:999px;background:#f0ecff;color:#5543ac}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.hidden{display:none!important}.panel{max-width:680px;margin:30px auto;background:white;border:1px solid var(--line);border-radius:24px;padding:24px}.panel h2{margin-top:0}.field{display:grid;gap:6px;margin:13px 0}.field label{font-weight:700;font-size:14px}.field input{width:100%;padding:12px;border:1px solid #ddd6ce;border-radius:12px;background:#fff}.notice{padding:12px 14px;border-radius:14px;background:#fff5d9;margin:14px 0;color:#6a4d00}.status{font-size:13px;color:var(--muted)}.exercise{max-width:720px;margin:24px auto}.question{font-size:24px;margin:12px 0}.options{display:grid;gap:10px;margin:18px 0}.option{background:white;color:var(--ink);border:2px solid var(--line);text-align:left}.option.selected{border-color:var(--purple);background:#f5f2ff}.feedback{padding:12px;border-radius:14px;margin:12px 0}.good{background:#e7fbf1;color:#176344}.bad{background:#fff0f0;color:#8c2525}footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:13px}
+@media(max-width:760px){header{padding:12px 14px}.hero{grid-template-columns:1fr;padding:24px}.hero-art{font-size:60px;grid-row:1}.grid{grid-template-columns:1fr}.hero h2{font-size:31px}.brand h1{font-size:15px}main{padding:18px 14px 50px}}
+
+/* Diseño visual Cumbre: crema cálido, bosque y salvia */
+:root{--ink:#24352e;--muted:#68766f;--paper:#f7f6f0;--purple:#315b4b;--pink:#dce7df;--mint:#dce8dc;--yellow:#e9e1cf;--line:#e5e4da}
+body{background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:rgba(255,253,248,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e5e4da}
+.logo{background:#315b4b;color:white;border-radius:15px;box-shadow:0 5px 14px #203d301a}
+.brand h1{letter-spacing:-.035em;font-size:19px}
+.brand small{font-size:12px}
+main{max-width:1160px;padding-top:26px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(222,233,224,.94),rgba(242,242,232,.91) 48%,rgba(229,232,225,.94)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85') center 48%/cover;border:1px solid #dce3d8;border-radius:28px;box-shadow:0 14px 36px #314c3c0c}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,248,240,.45),transparent 82%);pointer-events:none}
+.hero>div{position:relative;z-index:1}
+.hero h2{color:#203a2e;letter-spacing:-.045em}
+.hero p{color:#50635a}
+.tag{background:#fffdf8;color:#315b4b;border:1px solid #dce5da}
+button{background:#315b4b;border-radius:13px;box-shadow:0 3px 8px #315b4b12;transition:transform .16s,background .16s}
+button:hover{background:#24483a;transform:translateY(-1px)}
+button.secondary{background:#dce8dc;color:#294d3d}
+button.secondary:hover{background:#cedfce}
+button.ghost{background:#fffefa;border-color:#e5e4da}
+.card,.panel{background:#fffefa;border-color:#e5e4da;border-radius:22px;box-shadow:0 7px 24px #263b2d08}
+.card h3,.panel h2{color:#253b30}
+.pill{background:#e3ece1;color:#315b4b}
+.option.selected{border-color:#71927d;background:#edf4ec}
+.good{background:#e4f0e4;color:#275b3f}
+.bad{background:#fbebdf;color:#8c4735}
+.notice{background:#f3eee0;color:#665737}
+.field input,textarea,select{border:1px solid #dfe4da;border-radius:12px;padding:11px;background:#fffefa;color:var(--ink);max-width:100%}
+footer{color:#7b877e}
+@media(max-width:760px){main{padding:16px 13px 42px}.hero{border-radius:22px}.hero h2{font-size:29px}.grid{gap:12px}.card{padding:17px}}
+
+</style></head><body>
+<header><div class="brand"><div class="logo">你好</div><div><h1>陈晓超专属平台</h1><small>Tu espacio personal de español · 每天进步一点点</small></div></div><div class="row"><span id="userLabel" class="status">Vista previa</span><button id="authBtn" class="secondary">Entrar</button></div></header>
+<main>
+<section class="hero"><div><span class="tag">中文 + ESPAÑOL</span><h2>¡Hola! Vamos a aprender juntos. 🌟</h2><p>Lecciones cortas, palabras útiles y español para la vida diaria y los negocios. 每天学习 30 分钟，一点一点进步。</p><div class="actions"><button id="startBtn">Empezar a aprender 开始学习</button><button class="ghost" id="businessBtn">Español comercial 商务西语</button></div></div><div class="hero-art" aria-hidden="true">🗣️📚✨</div></section>
+<div id="message" class="notice hidden" role="status"></div>
+<section id="authPanel" class="panel hidden"><h2>Entrar / 登录</h2><p class="muted">Utiliza la cuenta que creaste en Supabase.</p><div class="field"><label for="email">Correo electrónico 邮箱</label><input id="email" type="email" autocomplete="email" placeholder="tu@email.com"></div><div class="field"><label for="password">Contraseña 密码</label><input id="password" type="password" autocomplete="current-password" placeholder="Tu contraseña"></div><div class="actions"><button id="loginBtn">Entrar 登录</button><button class="secondary" id="signupBtn">Crear cuenta 注册</button><button class="ghost" id="cancelAuth">Cancelar</button></div><p class="status">Las cuentas y contraseñas se gestionan en Supabase; esta página no las guarda.</p></section>
+<section id="lessonSection"><div class="section-head"><div><h2>Tu camino de aprendizaje 学习路线</h2><div class="muted">Elige cualquier tema. Si no sabes tu nivel, haz primero el test de nivel.</div></div><div class="actions"><button class="secondary" id="placementTopBtn">🧭 Evaluar mi nivel 测试水平</button><button class="secondary" id="examTopBtn">📝 Mini examen 模拟小测</button></div></div><div id="lessonGrid" class="grid">
+<article class="card"><div class="emoji">👋</div><span class="pill">日常西语 · 01</span><h3>Saludos y presentaciones</h3><p>问候与自我介绍 · Saludar y decir tu nombre.</p><button class="secondary moduleBtn" data-module="greetings">Empezar 开始</button></article>
+<article class="card"><div class="emoji">☕</div><span class="pill">日常西语 · 02</span><h3>En una cafetería</h3><p>在咖啡馆 · Pedir café y comida.</p><button class="secondary moduleBtn" data-module="cafe">Empezar 开始</button></article>
+<article class="card"><div class="emoji">🛍️</div><span class="pill">日常西语 · 03</span><h3>Compras y precios</h3><p>购物与价格 · Preguntar cuánto cuesta.</p><button class="secondary moduleBtn" data-module="shopping">Empezar 开始</button></article>
+<article class="card"><div class="emoji">🤝</div><span class="pill">商务西语 · 01</span><h3>Presentarte a un cliente</h3><p>向客户介绍自己 · Primer contacto profesional.</p><button class="secondary moduleBtn" data-module="business">Empezar 开始</button></article>
+<article class="card"><div class="emoji">📦</div><span class="pill">商务西语 · 02</span><h3>Productos y pedidos</h3><p>产品与订单 · Hablar de productos, cantidades y entregas.</p><button class="secondary moduleBtn" data-module="orders">Empezar 开始</button></article>
+<article class="card"><div class="emoji">🧾</div><span class="pill">商务西语 · 03</span><h3>Correos y llamadas</h3><p>商务邮件与电话 · Confirmar reuniones, responder y hacer seguimiento.</p><button class="secondary moduleBtn" data-module="emails">Empezar 开始</button></article>
+<article class="card"><div class="emoji">🖥️</div><span class="pill">Norbitouch · 技术西语</span><h3>Español técnico: Norbitouch</h3><p>Pantallas táctiles, TPV, kioscos, instalación, conectividad y soporte.</p><button class="secondary moduleBtn" data-module="norbitouch">Practicar 技术练习</button></article>
+<article class="card"><div class="emoji">📡</div><span class="pill">TouchWo · 技术西语</span><h3>Español técnico: TouchWo</h3><p>Hardware, especificaciones, integración, pedidos, garantías y distribuidores.</p><button class="secondary moduleBtn" data-module="touchwo">Practicar 技术练习</button></article>
+<article class="card"><div class="emoji">🧳</div><span class="pill">日常西语 · 04</span><h3>Transporte y direcciones</h3><p>交通与问路 · Preguntar cómo llegar y entender indicaciones.</p><button class="secondary moduleBtn" data-module="travel">Empezar 开始</button></article>
+<article class="card"><div class="emoji">📅</div><span class="pill">日常西语 · 05</span><h3>Citas y horarios</h3><p>预约与时间 · Proponer una hora y confirmar una cita.</p><button class="secondary moduleBtn" data-module="appointments">Empezar 开始</button></article>
+<article class="card"><div class="emoji">🎧</div><span class="pill">听说练习</span><h3>Escuchar y hablar</h3><p>听力与口语 · Escucha frases y practica en voz alta.</p><button class="secondary moduleBtn" data-module="speaking">Practicar 练习</button></article>
+<article class="card"><div class="emoji">🔁</div><span class="pill">复习</span><h3>Repaso rápido</h3><p>复习 · Repasa vocabulario de todos los temas.</p><button class="secondary moduleBtn" data-module="review">Repasar 复习</button></article>
+<article class="card"><div class="emoji">⭐</div><span class="pill">收藏</span><h3>Mis favoritos</h3><p>我的收藏 · Guarda frases para estudiar después.</p><button class="secondary moduleBtn" data-module="favorites">Abrir 打开</button></article>
+<article class="card"><div class="emoji">🧩</div><span class="pill">错题本</span><h3>Mis errores</h3><p>错题复习 · Practica las preguntas que fallaste.</p><button class="secondary moduleBtn" data-module="mistakes">Repasar 复习</button></article>
+<article class="card"><div class="emoji">📈</div><span class="pill">学习进度</span><h3>Mi progreso</h3><p>我的学习进度 · Consulta tus resultados en este dispositivo.</p><button class="secondary moduleBtn" data-module="progress">Ver progreso 查看</button></article>
+<article class="card"><div class="emoji">🧭</div><span class="pill">分级测试</span><h3>Test de nivel</h3><p>水平测试 · Descubre qué vocabulario ya conoces.</p><button class="secondary moduleBtn" data-module="placement">Empezar test 开始测试</button></article>
+</div></section>
+<section id="examSection" class="panel hidden"><div class="section-head"><div><h2>Mini examen 模拟小测</h2><p class="muted">Elige las categorías, cantidad de preguntas y cuándo ver las correcciones.</p></div><button class="ghost" id="examBackBtn">← Volver al menú</button></div><div class="grid"><article class="card"><h3>Categorías 类别</h3><label><input type="checkbox" class="examCategory" value="greetings" checked> Saludos y presentaciones</label><label><input type="checkbox" class="examCategory" value="cafe"> Cafetería</label><label><input type="checkbox" class="examCategory" value="shopping"> Compras y precios</label><label><input type="checkbox" class="examCategory" value="business"> Español comercial</label><label><input type="checkbox" class="examCategory" value="orders"> Productos y pedidos</label><label><input type="checkbox" class="examCategory" value="emails"> Correos y llamadas</label><label><input type="checkbox" class="examCategory" value="norbitouch"> Norbitouch técnico</label><label><input type="checkbox" class="examCategory" value="touchwo"> TouchWo técnico</label><label><input type="checkbox" class="examCategory" value="travel"> Transporte</label><label><input type="checkbox" class="examCategory" value="appointments"> Citas y horarios</label></article><article class="card"><h3>Configuración 设置</h3><label for="examCount">Número de preguntas</label><select id="examCount"><option>5</option><option selected>10</option><option>15</option><option>20</option><option>30</option></select><label for="examCorrection">Cuándo corregir</label><select id="examCorrection"><option value="each">Después de cada pregunta</option><option value="end">Al final del examen</option></select><label for="examType">Tipo de preguntas</label><select id="examType"><option value="mixed">Variado</option><option value="mcq">Elegir respuesta</option><option value="grammar">Uso y gramática</option><option value="translation">Traducción y significado</option></select><p class="muted">El resultado es orientativo, no una certificación oficial.</p><button id="startExamBtn">Empezar examen 开始考试</button></article></div><div id="examSummary"></div></section>
+<section id="exerciseSection" class="panel exercise hidden"><div class="row"><span class="pill">LECCIÓN 1 · 第一课</span><button class="ghost" id="closeLesson">Volver 返回</button></div><h2>Saludos y presentaciones</h2><p class="muted">问候与自我介绍 · Elige la respuesta correcta.</p><div id="questionArea"></div><div class="actions"><button id="listenBtn" class="ghost">🔊 Escuchar 听</button><button id="recordBtn" class="ghost">🎙️ Grabar voz 录音</button><button id="favoriteBtn" class="ghost">☆ Guardar favorito 收藏</button><button id="checkAnswer">Comprobar 检查</button><button id="nextQuestion" class="secondary hidden">Siguiente 下一题</button></div><div id="answerFeedback"></div><div id="recordingArea" class="hidden"><p class="status">Tu grabación se queda en este navegador y no se sube a ningún servidor.</p><audio id="recordedAudio" controls></audio></div></section>
+<section id="teacherSection" class="hidden"><div class="section-head"><div><h2>Panel de profesora 老师面板</h2><div class="muted">Resumen del progreso de tu alumno.</div></div><span class="pill">PROFESORA</span></div><div class="grid"><article class="card"><div class="emoji">📚</div><h3>Lecciones publicadas</h3><p id="teacherLessonCount">Cargando…</p></article><article class="card"><div class="emoji">🎯</div><h3>Intentos registrados</h3><p id="teacherAttemptCount">Cargando…</p></article><article class="card"><div class="emoji">📝</div><h3>Seguimiento</h3><div id="teacherStudentReport">Todavía no hay suficientes intentos sincronizados para mostrar tendencias.</div></article></div><div class="card"><h3>Diagnóstico de errores 错误诊断</h3><p class="muted">Muestra los intentos registrados en Supabase cuando existan y resume los datos locales de este navegador por categoría.</p><div id="teacherDiagnostics">Todavía no hay datos suficientes.</div><button class="secondary" id="teacherErrorsRefreshBtn">Actualizar diagnóstico ↻</button></div><div class="card"><h3>Notas de la profesora 老师备注</h3><p>Escribe los puntos que quieres trabajar en la próxima sesión.</p><textarea id="teacherNotesInput" rows="3" placeholder="Ej.: repasar ser/estar, por/para y frases para explicar un fallo técnico…"></textarea><button class="secondary" id="saveTeacherNotesBtn">Guardar nota</button><p id="teacherNotesSaved" class="muted"></p></div><button class="secondary" id="teacherRefreshBtn">Actualizar seguimiento ↻</button></section>
+<section id="profileSection" class="panel hidden"><div class="section-head"><div><h2>Mi perfil y progreso 我的学习进度</h2><p id="profileDetails" class="muted"></p></div><button class="ghost" id="profileBackBtn">← Volver al menú</button></div><div id="profileDashboard" class="grid"></div><div class="actions"><button class="secondary" id="profileReviewBtn">Practicar errores 错题重练</button><button class="secondary" id="profileProgressBtn">Ver detalle de progreso 进度详情</button><button class="ghost" id="logoutBtn">Cerrar sesión 退出登录</button></div><p class="muted">Los ejercicios locales guardan estadísticas en este navegador. La sincronización entre dispositivos requiere guardar también estos intentos en Supabase.</p></section>
+</main><footer>Hecho con cariño · 学习语言，也是在拉近彼此的距离 ❤️</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
-const initial=[{id:1,title:'Los saludos',zh:'打招呼',cat:'Vocabulario · A1',icon:'👋',status:'pending',prompt:'Aprende cinco saludos básicos. 学习五个基本问候语。',items:[['Hola','你好'],['Buenos días','早上好'],['Buenas tardes','下午好'],['Buenas noches','晚上好']]},{id:2,title:'El verbo «ser»',zh:'动词 ser',cat:'Gramática · A1',icon:'✍️',status:'pending',prompt:'Completa las frases con ser. 用 ser 的正确形式填空。',items:[['Yo ___ estudiante.','我是学生。'],['Tú ___ de China.','你来自中国。']]},{id:3,title:'Las vocales',zh:'西班牙语元音',cat:'Pronunciación · A1',icon:'🎧',status:'pending',prompt:'Practica las cinco vocales españolas. 练习五个元音。',items:[['A · E · I · O · U','五个元音']]},{id:4,title:'Mi primera lectura',zh:'我的第一篇阅读',cat:'Lectura · A1',icon:'📖',status:'done',prompt:'Lee el texto y responde. 阅读短文并回答问题。',items:[['Me llamo Xiao Chao.','我叫晓超。']]}];
-let tasks=JSON.parse(localStorage.getItem('ec_tasks')||'null')||initial;let role=localStorage.getItem('ec_role')||'student';let filter='all';
-function persist(){localStorage.setItem('ec_tasks',JSON.stringify(tasks));renderAll()}function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='tasks')renderTasks();if(id==='progress')renderProgress();if(id==='profile')renderProfile();if(id==='teacher')updateCounts()}
-document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));document.getElementById('nav').querySelectorAll('button').forEach(b=>b.onclick=()=>go(b.dataset.page));
-function card(t){return `<div class="task" onclick="openTask(${t.id})"><div class="taskicon">${t.icon}</div><div class="taskmain"><b>${esc(t.title)} · ${esc(t.zh)}</b><small>${esc(t.cat)}</small></div><span class="pill ${t.status==='done'?'done':''}">${t.status==='done'?'Completada':t.status==='submitted'?'Entregada':'Pendiente'}</span><span>›</span></div>`}
-function renderTasks(){let a=tasks.filter(t=>filter==='all'||(filter==='done'?t.status==='done':t.status!=='done'));document.getElementById('tasksList').innerHTML=a.map(card).join('')||'<p class="muted">No hay tareas en esta categoría.</p>'}
-function renderHome(){document.getElementById('homeTasks').innerHTML=tasks.filter(t=>t.status!=='done').slice(0,3).map(card).join('')||'<p>¡Todo al día!</p>'}
-function renderCounts(){document.getElementById('count').textContent=tasks.filter(t=>t.status==='done').length+'/'+tasks.length;updateCounts()}
-function updateCounts(){document.getElementById('pendingCount').textContent=tasks.filter(t=>t.status!=='done').length;document.getElementById('doneCount').textContent=tasks.filter(t=>t.status==='done').length}
-function renderAll(){renderTasks();renderHome();renderCounts();renderProfile();renderProgress()}
-document.getElementById('filters').onclick=e=>{let b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;renderTasks()}
-function openTask(id){let t=tasks.find(x=>x.id===id);document.getElementById('detailContent').innerHTML=`<button class="back" onclick="go('tasks')">← Volver a tareas</button><span class="pill">${esc(t.cat)}</span><h2>${esc(t.title)} · ${esc(t.zh)}</h2><div class="panel"><h3>Instrucciones · 任务说明</h3><p>${esc(t.prompt)}</p></div><div class="panel"><h3>Actividad · 练习</h3>${t.items.map((x,i)=>`<div class="exercise"><b>${i+1}. ${esc(x[0])}</b><p class="muted">${esc(x[1])}</p><input id="ans${i}" placeholder="Escribe tu respuesta / 输入答案"></div>`).join('')}<div class="actions"><button class="secondary" onclick="saveDraft(${t.id})">Guardar progreso</button><button class="primary" onclick="submitTask(${t.id})">Entregar tarea</button><button class="secondary" onclick="markDone(${t.id})">Marcar completada</button></div><p class="muted" id="detailMsg"></p></div>`;go('detail')}
-function saveDraft(id){let a=[...document.querySelectorAll('[id^=ans]')].map(x=>x.value);localStorage.setItem('ec_draft_'+id,JSON.stringify(a));toast('Guardado en este navegador')}
-function submitTask(id){saveDraft(id);tasks.find(t=>t.id===id).status='submitted';persist();document.getElementById('detailMsg').textContent='Demo: entrega registrada localmente. Para enviarla a 陳老師 y sincronizar dispositivos, hay que conectar Supabase.';toast('Tarea entregada')}
-function markDone(id){tasks.find(t=>t.id===id).status='done';persist();openTask(id);toast('Tarea completada')}
-document.getElementById('switch').onclick=switchRole;function switchRole(){role=role==='teacher'?'student':'teacher';localStorage.setItem('ec_role',role);renderProfile();document.getElementById('switch').textContent=role==='teacher'?'👩‍🏫 陳老師 · Profesora ▾':'👤 陈晓超 · Alumno ▾';document.getElementById('welcome').textContent=role==='teacher'?'BIENVENIDA, 陳老師':'BIENVENIDO, 陈晓超';go(role==='teacher'?'teacher':'home')}
-function renderProfile(){document.getElementById('profileName').textContent=role==='teacher'?'陳老師':'陈晓超';document.getElementById('profileRole').textContent=role==='teacher'?'Profesora':'Alumno · Nivel A1';document.getElementById('switch').textContent=role==='teacher'?'👩‍🏫 陳老師 · Profesora ▾':'👤 陈晓超 · Alumno ▾'}
-function createTask(){let title=document.getElementById('newTitle').value.trim();if(!title){toast('Escribe un título');return}tasks.unshift({id:Date.now(),title,zh:'新任务',cat:'Actividad personalizada · A1',icon:'📝',status:'pending',prompt:document.getElementById('newPrompt').value||'Completa esta actividad.',items:[['Escribe tu respuesta','写下你的答案']]});persist();document.getElementById('newTitle').value='';document.getElementById('newPrompt').value='';go('tasks');toast('Tarea creada')}
-function renderProgress(){let n=tasks.filter(t=>t.status==='done').length;document.getElementById('progressSummary').innerHTML=`<h2>${n} de ${tasks.length} tareas completadas</h2><div class="bar"><span style="width:${Math.round(n/tasks.length*100)}%"></span></div><p class="muted">Los datos están guardados solo en este navegador hasta conectar Supabase.</p>`}
-function checkGrammar(){let v=document.getElementById('grammarAnswer').value.trim().toLowerCase();document.getElementById('grammarFeedback').textContent=v==='soy'?'¡Correcto! 正确！':'Pista: con “yo” usamos “soy”. 提示：yo 搭配 soy。'}
-function readAnswer(ok){document.getElementById('readFeedback').textContent=ok?'¡Correcto! Vive en España. 答对了！':'Vuelve a leer el texto. 再读一遍。'}
-document.getElementById('translationToggle').onclick=()=>{let p=document.getElementById('translation');p.hidden=!p.hidden;document.getElementById('translationToggle').textContent=p.hidden?'Mostrar traducción 中文':'Ocultar traducción 隐藏中文'}
-function speak(s){if(window.speechSynthesis){let u=new SpeechSynthesisUtterance(s);u.lang='es-ES';speechSynthesis.speak(u)}else toast('Voz no disponible')}
-let vocab=[['Hola','你好','Hola, ¿qué tal?'],['Gracias','谢谢','Muchas gracias.'],['Por favor','请','Un café, por favor.'],['Adiós','再见','¡Hasta mañana!']];document.getElementById('vocabGrid').innerHTML=vocab.map((v,i)=>`<button class="learning ${['sage','blue','lav','sand'][i]}" onclick="showVocab(${i})"><span class="emoji">📘</span><b>${v[0]}</b><small>${v[1]}</small></button>`).join('');function showVocab(i){let v=vocab[i];document.getElementById('vocabInfo').innerHTML=`<h2>${v[0]} · ${v[1]}</h2><p>${v[2]}</p><button class="secondary" onclick="speak('${v[0]}')">🔊 Escuchar</button>`}
-renderAll();
+/* Sustituye estos dos valores por los de TU proyecto jiaowo-spanish.
+   Usa la URL del proyecto y la clave Publishable. Nunca uses service_role en el navegador. */
+const SUPABASE_URL_RAW = "https://gryjrpuxijjlghevwghk.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_7lSa0GMTm_cpoN3b-fL6ng_XODMoHpb".trim();
+// Acepta la Project URL base o una URL copiada accidentalmente con /rest/v1/.
+const SUPABASE_URL = SUPABASE_URL_RAW.trim().replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
+const configured = /^https:\/\//.test(SUPABASE_URL) &&
+  !SUPABASE_URL.includes("PEGA_AQUI") &&
+  SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_") &&
+  !SUPABASE_PUBLISHABLE_KEY.includes("PEGA_AQUI");
+const db = configured && window.supabase && typeof window.supabase.createClient === "function"
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
+  : null;
+const $=id=>document.getElementById(id);let currentUser=null,currentRole=null,questions=[],qi=0,selected=null,answered=false,demo=true;
+const demoQuestions=[
+{prompt_es:'¿Cómo se dice 你好 en español?',prompt_zh:'“你好”用西班牙语怎么说？',options:['Hola','Adiós','Gracias'],answer:'Hola',explanation_es:'Hola significa 你好。'},
+{prompt_es:'¿Qué significa Gracias?',prompt_zh:'Gracias 是什么意思？',options:['谢谢','再见','早上好'],answer:'谢谢',explanation_es:'Gracias significa 谢谢。'},
+{prompt_es:'¿Cómo se dice “我叫 Pedro” en español?',prompt_zh:'“我叫 Pedro”用西班牙语怎么说？',options:['Me llamo Pedro','Hasta mañana','¿Qué tal?'],answer:'Me llamo Pedro',explanation_es:'Me llamo Pedro = 我叫 Pedro。'},
+{prompt_es:'¿Cómo te llamas? significa…',prompt_zh:'¿Cómo te llamas? 的意思是……',options:['你叫什么名字？','你好吗？','你来自哪里？'],answer:'你叫什么名字？',explanation_es:'Se usa para preguntar el nombre. 用来询问姓名。'},
+{prompt_es:'¿Qué respondes a ¿Qué tal?',prompt_zh:'别人问你 ¿Qué tal?，你可以怎么回答？',options:['Bien, gracias','Me llamo','Hasta mañana'],answer:'Bien, gracias',explanation_es:'Bien, gracias = 好，谢谢。'}];
+
+let localExerciseMode=false,currentModule='greetings',placementCorrect=0,examMode=false,examCorrection='each',examResults=[],examQuestions=[];
+const moduleData={
+ greetings:[
+ {prompt_es:'¿Cómo se dice 你好 en español?',prompt_zh:'“你好”用西班牙语怎么说？',options:['Hola','Adiós','Gracias'],answer:'Hola',explanation_es:'Hola = 你好。'},
+ {prompt_es:'¿Qué significa Gracias?',prompt_zh:'Gracias 是什么意思？',options:['谢谢','再见','早上好'],answer:'谢谢',explanation_es:'Gracias = 谢谢。'},
+ {prompt_es:'¿Cómo dices “我叫 Pedro”?',prompt_zh:'“我叫 Pedro”用西班牙语怎么说？',options:['Me llamo Pedro','Hasta mañana','¿Qué tal?'],answer:'Me llamo Pedro',explanation_es:'Me llamo Pedro = 我叫 Pedro。'},
+ {prompt_es:'¿Cómo te llamas? significa…',prompt_zh:'¿Cómo te llamas? 的意思是……',options:['你叫什么名字？','你好吗？','你来自哪里？'],answer:'你叫什么名字？',explanation_es:'Se usa para preguntar el nombre. 用来询问姓名。'},
+ {prompt_es:'¿Qué respondes a ¿Qué tal?',prompt_zh:'别人问 ¿Qué tal?，你可以怎么回答？',options:['Bien, gracias','Me llamo','Hasta mañana'],answer:'Bien, gracias',explanation_es:'Bien, gracias = 好，谢谢。'}],
+ cafe:[
+ {prompt_es:'Para pedir café, dices…',prompt_zh:'想点一杯咖啡，你可以说……',options:['Un café, por favor','¿Cuánto cuesta?','Soy el proveedor'],answer:'Un café, por favor',explanation_es:'Por favor = 请。礼貌用语。'},
+ {prompt_es:'¿Qué significa la cuenta, por favor?',prompt_zh:'La cuenta, por favor 是什么意思？',options:['请买单','请给我水','早上好'],answer:'请买单','explanation_es':'La cuenta, por favor = 请买单。'},
+ {prompt_es:'¿Agua con gas o sin gas? pregunta…',prompt_zh:'这句话是在问什么？',options:['要气泡水还是普通水？','要不要咖啡？','你叫什么？'],answer:'要气泡水还是普通水？',explanation_es:'Con gas = 有气；sin gas = 无气。'},
+ {prompt_es:'Completa: Quiero ___ tostada.',prompt_zh:'填空：Quiero ___ tostada（我想要一份吐司）。',options:['una','un','unos'],answer:'una',explanation_es:'Tostada es femenino: una tostada。'},
+ {prompt_es:'¿Qué significa para llevar?',prompt_zh:'Para llevar 是什么意思？',options:['打包带走','在这里吃','多少钱'],answer:'打包带走',explanation_es:'Para llevar = para llevar fuera, 打包带走。'}],
+ shopping:[
+ {prompt_es:'¿Cuánto cuesta? significa…',prompt_zh:'¿Cuánto cuesta? 是什么意思？',options:['多少钱？','在哪里？','几点了？'],answer:'多少钱？',explanation_es:'Útil para preguntar el precio. 用于询问价格。'},
+ {prompt_es:'“太贵了” en español es…',prompt_zh:'“太贵了”用西班牙语怎么说？',options:['Es demasiado caro','Está abierto','Muchas gracias'],answer:'Es demasiado caro',explanation_es:'Caro = 贵。'},
+ {prompt_es:'¿Puedo pagar con tarjeta? pregunta…',prompt_zh:'这句话是在问什么？',options:['可以刷卡吗？','有折扣吗？','可以试试吗？'],answer:'可以刷卡吗？',explanation_es:'Tarjeta = 银行卡。'},
+ {prompt_es:'“打折” en español es…',prompt_zh:'“打折”用西班牙语怎么说？',options:['Descuento','Pedido','Entrega'],answer:'Descuento',explanation_es:'Descuento = 折扣。'},
+ {prompt_es:'Quiero ___ kilo de manzanas.',prompt_zh:'我想要一公斤苹果。',options:['un','una','unos'],answer:'un',explanation_es:'Un kilo = 一公斤。'}],
+ business:[
+ {prompt_es:'“我是 Norbitouch 的……” puedes decir…',prompt_zh:'“我是 Norbitouch 的……”可以说……',options:['Trabajo en Norbitouch','Quiero una mesa','Hasta luego, café'],answer:'Trabajo en Norbitouch',explanation_es:'Trabajo en… = 我在……工作。'},
+ {prompt_es:'Mucho gusto significa…',prompt_zh:'Mucho gusto 是什么意思？',options:['很高兴认识你','订单已发出','太贵了'],answer:'很高兴认识你',explanation_es:'Expresión habitual al presentarse. 初次见面时常用。'},
+ {prompt_es:'¿A qué se dedica su empresa? pregunta…',prompt_zh:'这句话是在问什么？',options:['贵公司是做什么的？','你住在哪里？','多少钱？'],answer:'贵公司是做什么的？',explanation_es:'Empresa = 公司；dedicarse a = 从事。'},
+ {prompt_es:'“客户” en español es…',prompt_zh:'“客户”用西班牙语怎么说？',options:['Cliente','Pedido','Almacén'],answer:'Cliente',explanation_es:'Cliente = 客户。'},
+ {prompt_es:'Le envío el catálogo significa…',prompt_zh:'Le envío el catálogo 是什么意思？',options:['我把产品目录发给您','我需要咖啡','订单取消了'],answer:'我把产品目录发给您',explanation_es:'Le envío… = 我给您发送……。'}],
+ orders:[
+ {prompt_es:'“订单” en español es…',prompt_zh:'“订单”用西班牙语怎么说？',options:['Pedido','Precio','Factura'],answer:'Pedido',explanation_es:'Pedido = 订单。'},
+ {prompt_es:'¿Cuál es el plazo de entrega? pregunta…',prompt_zh:'这句话是在问什么？',options:['交货期是多久？','你们几点关门？','可以刷卡吗？'],answer:'交货期是多久？',explanation_es:'Plazo de entrega = 交货期。'},
+ {prompt_es:'“Cantidad” significa…',prompt_zh:'Cantidad 是什么意思？',options:['数量','质量','客户'],answer:'数量',explanation_es:'Cantidad = 数量。'},
+ {prompt_es:'Necesitamos una factura significa…',prompt_zh:'Necesitamos una factura 是什么意思？',options:['我们需要一张发票','我们需要一张桌子','我们需要一个目录'],answer:'我们需要一张发票',explanation_es:'Factura = 发票。'},
+ {prompt_es:'¿Puede confirmar el pedido? significa…',prompt_zh:'¿Puede confirmar el pedido? 是什么意思？',options:['您能确认订单吗？','您能寄目录吗？','您能降价吗？'],answer:'您能确认订单吗？',explanation_es:'Confirmar = 确认。'}],
+ speaking:[
+ {prompt_es:'Escucha y repite: Buenos días.',prompt_zh:'听一听并跟读：Buenos días（早上好）。',options:['Buenos días','Buenas noches','Hasta luego'],answer:'Buenos días',explanation_es:'Pulsa “Escuchar” y repite en voz alta. 点击“听”并大声跟读。'},
+ {prompt_es:'Escucha y repite: ¿Cómo está usted?',prompt_zh:'听一听并跟读：您好吗？',options:['¿Cómo está usted?','¿Cuánto cuesta?','¿Dónde está?'],answer:'¿Cómo está usted?',explanation_es:'Forma educada para preguntar cómo está alguien. 礼貌询问对方近况。'},
+ {prompt_es:'Escucha y repite: Muchas gracias.',prompt_zh:'听一听并跟读：非常感谢。',options:['Muchas gracias','Mucho gusto','Mi pedido'],answer:'Muchas gracias',explanation_es:'Muchas gracias = 非常感谢。'},
+ {prompt_es:'Escucha y repite: Hasta mañana.',prompt_zh:'听一听并跟读：明天见。',options:['Hasta mañana','Buenos días','Por favor'],answer:'Hasta mañana',explanation_es:'Hasta mañana = 明天见。'}],
+ review:[],
+ placement:[]
+};
+
+
+const studyNotes={
+ greetings:{title:'Cómo se usa 用法',body:'Para presentarte: “Me llamo Li” o “Soy Li”. Para profesión se usa SER: “Soy comercial”. Informal: “¿Cómo te llamas?”; formal: “¿Cómo se llama usted?”. “Encantado/a de conocerte” es informal; “Encantado/a de conocerle” es formal.'},
+ cafe:{title:'Estructuras útiles 实用句型',body:'Para pedir con cortesía: “Quería un café, por favor”, “¿Me pone un café con leche?” o “¿Podría traerme la cuenta?”. “Con” y “sin” expresan ingredientes: con leche, sin azúcar. “Para llevar” = para consumir fuera.'},
+ shopping:{title:'Verbo y preposiciones 动词与介词',body:'COSTAR cambia: “¿Cuánto cuesta esta pantalla?” (singular) / “¿Cuánto cuestan estas pantallas?” (plural). “Por 200 euros” expresa precio; “para el cliente” expresa destinatario. Demostrativos: este equipo, esta pantalla, estos cables, estas unidades.'},
+ business:{title:'Formalidad y verbos 正式表达与动词',body:'Con clientes puede usar USTED. “¿Podría enviarme…?” = petición cortés + infinitivo. “Le escribo para solicitar…” expresa finalidad. “Encargarse de + sustantivo/infinitivo”: “Me encargo de la instalación”. “Quedar con alguien” y “quedar en un lugar”.'},
+ orders:{title:'Pedidos y plazos 订单与交货期',body:'“Necesitamos 20 unidades”; “un lote de 10 equipos”; “el producto está disponible en stock”. “Tardar + tiempo en + infinitivo”: “Tardamos tres días en preparar el pedido”. “Enviar algo a alguien/a un lugar”: “Enviamos el equipo al cliente”.'},
+ emails:{title:'Correo profesional 商务邮件',body:'Modelo: “Buenos días, [nombre]. Le escribo para consultar el estado del pedido. ¿Podría confirmarme el plazo de entrega? Quedo pendiente de su respuesta. Un saludo”. “Adjuntar algo a un correo”; “hacer seguimiento de un pedido”; “quedar pendiente de una respuesta”.'},
+ norbitouch:{title:'Español técnico · Norbitouch 技术西语',body:'Frases: “La pantalla no responde al tacto”; “El TPV se reinicia”; “El kiosco no reconoce el periférico”; “¿Qué sistema operativo utiliza el equipo?”. Preposiciones habituales: compatible CON, conectado A, integrado EN/CON, alimentado POR. Diagnóstico: “¿Puede describir el fallo y los pasos para reproducirlo?”'},
+ touchwo:{title:'Español técnico · TouchWo 技术西语',body:'Frases: “¿Podrían facilitarnos la ficha técnica?”; “¿De cuántas pulgadas es la pantalla?”; “Necesitamos confirmar la garantía y el plazo de entrega”. Combinaciones: garantía DE dos años, precio PARA distribuidores, integración CON el sistema, disponible EN stock, envío DESDE el almacén.'},
+ travel:{title:'Preposiciones 介词',body:'IR A: “Voy al metro”. ESTAR EN: “Estoy en la estación”. VENIR DE: “Vengo del trabajo”. Contracciones: a + el = al; de + el = del. Direcciones: “Siga todo recto”, “gire a la derecha/izquierda”.'},
+ appointments:{title:'Tiempo y citas 时间表达',body:'Hora: “el jueves A las diez”; intervalo: “de diez A once”; futuro: “dentro de dos días”; pasado: “hace dos días”. “¿Le viene bien…?” pregunta si una hora resulta conveniente. “Quedar con el cliente en la oficina”.'}
+};
+
+moduleData.emails=[
+ {prompt_es:'Para pedir una reunión por correo, puedes escribir…',prompt_zh:'想通过邮件预约会议，可以写……',options:['¿Podríamos concertar una reunión?','¿Cuánto cuesta el café?','Estoy en la estación'],answer:'¿Podríamos concertar una reunión?',explanation_es:'Concertar una reunión = 预约会议。'},
+ {prompt_es:'“Adjunto el presupuesto” significa…',prompt_zh:'“Adjunto el presupuesto”是什么意思？',options:['随信附上报价单','订单已取消','请到仓库'],answer:'随信附上报价单',explanation_es:'Adjunto = 附上；presupuesto = 报价/预算。'},
+ {prompt_es:'Para confirmar que has recibido un correo, dices…',prompt_zh:'确认收到邮件，可以说……',options:['Confirmo la recepción del correo','No hay cobertura','Una mesa para dos'],answer:'Confirmo la recepción del correo',explanation_es:'Recepción del correo = 收到邮件。'},
+ {prompt_es:'“Le llamaré mañana para hacer seguimiento” significa…',prompt_zh:'这句话是什么意思？',options:['我明天会打电话跟进','我今天取消会议','我需要 una factura'],answer:'我明天会打电话跟进',explanation_es:'Hacer seguimiento = 跟进。'},
+ {prompt_es:'¿Le viene bien el jueves a las diez? pregunta…',prompt_zh:'这句话是在问什么？',options:['周四十点您方便吗？','您需要几台设备？','产品在哪里生产？'],answer:'周四十点您方便吗？',explanation_es:'¿Le viene bien…? = ……对您方便吗？'}
+];
+moduleData.norbitouch=[
+ {prompt_es:'¿Cómo describirías un TPV táctil?',prompt_zh:'如何描述触摸式POS终端？',options:['Un terminal de punto de venta con pantalla táctil','Un cable de alimentación','Un plazo de entrega'],answer:'Un terminal de punto de venta con pantalla táctil',explanation_es:'TPV = terminal de punto de venta；pantalla táctil = 触摸屏。'},
+ {prompt_es:'El cliente dice: “La pantalla no responde al tacto”. ¿Qué ocurre?',prompt_zh:'客户说“屏幕触摸没有反应”，是什么问题？',options:['La pantalla táctil no responde','El pedido está confirmado','La factura está pagada'],answer:'La pantalla táctil no responde',explanation_es:'Responder al tacto = 对触摸作出响应。'},
+ {prompt_es:'¿Qué significa “¿Qué sistema operativo utiliza el equipo?”',prompt_zh:'这句话是什么意思？',options:['设备使用什么操作系统？','设备多少钱？','什么时候可以送货？'],answer:'设备使用什么操作系统？',explanation_es:'Sistema operativo = 操作系统；equipo = 设备。'},
+ {prompt_es:'Para preguntar por la conexión, dices…',prompt_zh:'询问接口/连接方式，可以说……',options:['¿Qué puertos y opciones de conectividad incluye?','¿Tiene mesa libre?','¿A qué hora desayuna?'],answer:'¿Qué puertos y opciones de conectividad incluye?',explanation_es:'Puertos y conectividad = 接口与连接方式。'},
+ {prompt_es:'“Podemos realizar una instalación y una prueba de funcionamiento” significa…',prompt_zh:'这句话是什么意思？',options:['我们可以安装并进行运行测试','我们已经 enviado la factura','No tenemos existencias'],answer:'我们可以安装并进行运行测试',explanation_es:'Prueba de funcionamiento = 功能/运行测试。'},
+ {prompt_es:'El cliente pregunta por un problema técnico. ¿Qué debes pedir primero?',prompt_zh:'客户报告技术问题，首先应询问什么？',options:['Una descripción del fallo y los pasos para reproducirlo','Solo el color de la caja','El menú del restaurante'],answer:'Una descripción del fallo y los pasos para reproducirlo',explanation_es:'Fallo = 故障；reproducir el problema = 复现问题。'}
+];
+moduleData.touchwo=[
+ {prompt_es:'“Ficha técnica” significa…',prompt_zh:'Ficha técnica 是什么意思？',options:['技术规格表','发票地址','会议纪要'],answer:'技术规格表',explanation_es:'La ficha técnica recoge las especificaciones del producto. 技术规格表列出产品参数。'},
+ {prompt_es:'Para conocer el tamaño de una pantalla, preguntas…',prompt_zh:'询问屏幕尺寸，可以说……',options:['¿De cuántas pulgadas es la pantalla?','¿Cuándo vence la factura?','¿Dónde está la cafetería?'],answer:'¿De cuántas pulgadas es la pantalla?',explanation_es:'Pulgadas = 英寸。'},
+ {prompt_es:'“Integración con el sistema del cliente” significa…',prompt_zh:'这是什么意思？',options:['与客户系统集成','产品缺货','确认付款'],answer:'与客户系统集成',explanation_es:'Integración = 集成。'},
+ {prompt_es:'¿Qué significa “El equipo tiene garantía de dos años”?',prompt_zh:'这句话是什么意思？',options:['设备有两年保修','设备两天后发货','设备有两个 puertos'],answer:'设备有两年保修',explanation_es:'Garantía = 保修/质保。'},
+ {prompt_es:'Para preguntar por el precio de distribuidor, dices…',prompt_zh:'询问经销商价格，可以说……',options:['¿Cuál es el precio para distribuidores?','¿Tiene una mesa para dos?','¿Cómo se llama usted?'],answer:'¿Cuál es el precio para distribuidores?',explanation_es:'Distribuidor = 经销商。'},
+ {prompt_es:'“Necesitamos confirmar el plazo de entrega y las unidades disponibles” significa…',prompt_zh:'这句话是什么意思？',options:['我们需要确认交货期和可供货数量','我们需要 cambiar de restaurante','我们需要 una cita médica'],answer:'我们需要确认交货期和可供货数量',explanation_es:'Unidades disponibles = 可供货数量。'}
+];
+moduleData.travel=[
+ {prompt_es:'Para preguntar dónde está el metro, dices…',prompt_zh:'询问地铁在哪里，可以说……',options:['¿Dónde está el metro?','¿Cuánto cuesta el pedido?','Le envío el catálogo'],answer:'¿Dónde está el metro?',explanation_es:'¿Dónde está…? = ……在哪里？'},
+ {prompt_es:'“Gire a la derecha” significa…',prompt_zh:'Gire a la derecha 是什么意思？',options:['向右转','向左转','直走'],answer:'向右转',explanation_es:'Derecha = 右边。'},
+ {prompt_es:'¿Está lejos de aquí? pregunta…',prompt_zh:'这句话是在问什么？',options:['离这里远吗？','几点关门？','能刷卡吗？'],answer:'离这里远吗？',explanation_es:'Lejos = 远。'},
+ {prompt_es:'“Siga todo recto” significa…',prompt_zh:'Siga todo recto 是什么意思？',options:['一直往前走','停下来','过马路'],answer:'一直往前走',explanation_es:'Todo recto = 一直向前。'}
+];
+moduleData.appointments=[
+ {prompt_es:'Para proponer una hora, dices…',prompt_zh:'想约一个时间，可以说……',options:['¿Le va bien a las diez?','¿Cuánto pesa la caja?','Está muy caro'],answer:'¿Le va bien a las diez?',explanation_es:'¿Le va bien…? = ……对您合适吗？'},
+ {prompt_es:'“Tengo una cita a las tres” significa…',prompt_zh:'这句话是什么意思？',options:['我三点有个预约','我有三台设备','我需要一张发票'],answer:'我三点有个预约',explanation_es:'Cita = 预约/约会。'},
+ {prompt_es:'Para decir “llego diez minutos tarde”, dices…',prompt_zh:'“我会晚到十分钟”怎么说？',options:['Llegaré diez minutos tarde','Llegaré mañana temprano','Estoy de vacaciones'],answer:'Llegaré diez minutos tarde',explanation_es:'Tarde = 晚；temprano = 早。'},
+ {prompt_es:'“¿Podemos cambiar la reunión al viernes?” significa…',prompt_zh:'这句话是什么意思？',options:['我们可以把会议改到周五吗？','会议已经结束了吗？','产品有库存吗？'],answer:'我们可以把会议改到周五吗？',explanation_es:'Cambiar la reunión = 更改会议。'}
+];
+
+moduleData.review=[...moduleData.greetings.slice(0,2),...moduleData.cafe.slice(0,2),...moduleData.business.slice(0,1),...moduleData.orders.slice(0,1)];
+moduleData.placement=[...moduleData.greetings.slice(0,2),...moduleData.shopping.slice(0,2),...moduleData.business.slice(0,1),...moduleData.orders.slice(0,1)];
+function startModule(name){
+ currentModule=name; if(name==='placement')placementCorrect=0;
+ if(name==='favorites'){
+  const fav=JSON.parse(localStorage.getItem('spanishFavorites')||'[]');
+  if(!fav.length){msg('Todavía no tienes favoritos. Entra en una lección y pulsa ☆ Guardar favorito. 还没有收藏内容。');return}
+  startLesson(fav.map(x=>({...x,options:[x.answer,x.distractor1||'No lo sé',x.distractor2||'Otra respuesta'].filter(Boolean)})));return;
+ }
+ if(name==='mistakes'){
+  const wrong=JSON.parse(localStorage.getItem('spanishMistakes')||'[]');
+  if(!wrong.length){msg('¡Todavía no hay errores guardados! Sigue practicando. 暂无错题。');return}
+  localExerciseMode=true;startLesson(wrong);$('exerciseSection').querySelector('h2').textContent='Repasar mis errores 错题复习';return;
+ }
+ if(name==='progress'){
+  const st=JSON.parse(localStorage.getItem('spanishProgress')||'{"answered":0,"correct":0,"completed":0}');
+  const pct=st.answered?Math.round(st.correct/st.answered*100):0;
+  const wrong=JSON.parse(localStorage.getItem('spanishMistakes')||'[]');
+  $('answerFeedback').innerHTML='';$('questionArea').innerHTML=`<h3>Tu progreso 我的进度</h3><p>Preguntas respondidas: <b>${st.answered||0}</b></p><p>Respuestas correctas: <b>${st.correct||0}</b></p><p>Precisión: <b>${pct}%</b></p><p>Sesiones completadas: <b>${st.completed||0}</b></p><p>Preguntas para repasar: <b>${wrong.length}</b></p><div class="actions"><button class="secondary" id="reviewMistakesBtn">Repasar errores 复习错题</button><button class="ghost" id="resetLocalBtn">Reiniciar estadísticas 重置</button></div><p class="muted">Estos datos se guardan solo en este navegador. No se sincronizan todavía entre dispositivos.</p>`;
+  setTimeout(()=>{const r=$('reviewMistakesBtn');if(r)r.onclick=()=>startModule('mistakes');const z=$('resetLocalBtn');if(z)z.onclick=()=>{if(confirm('¿Reiniciar estadísticas y errores guardados en este navegador?')){localStorage.removeItem('spanishProgress');localStorage.removeItem('spanishMistakes');startModule('progress')}}},0);
+  $('exerciseSection').classList.remove('hidden');$('checkAnswer').classList.add('hidden');$('nextQuestion').classList.add('hidden');$('exerciseSection').scrollIntoView({behavior:'smooth'});return;
+ }
+ const qs=moduleData[name]||moduleData.greetings;
+ localExerciseMode=true;
+ startLesson(qs.map(q=>({...q,localDemo:true})));
+ const names={greetings:'Saludos y presentaciones',cafe:'En una cafetería',shopping:'Compras y precios',business:'Presentarte a un cliente',orders:'Productos y pedidos',emails:'Correos y llamadas',norbitouch:'Español técnico: Norbitouch',touchwo:'Español técnico: TouchWo',travel:'Transporte y direcciones',appointments:'Citas y horarios',speaking:'Escuchar y hablar',review:'Repaso rápido',placement:'Test de nivel'};
+ $('exerciseSection').querySelector('h2').textContent=names[name]||'Practicar español';
+ if(name==='speaking')msg('Pulsa 🔊 Escuchar para oír cada frase y repítela en voz alta. 先听，再大声跟读。');
+ if(name==='placement')msg('Test inicial orientativo: responde sin ayuda para descubrir qué conviene repasar. 入门测试。');
+}
+function speakCurrent(){
+ const q=questions[qi];const text=q?.prompt_es||'';if(!text)return;
+ if('speechSynthesis' in window){const u=new SpeechSynthesisUtterance(text);u.lang='es-ES';speechSynthesis.cancel();speechSynthesis.speak(u)}else msg('Tu navegador no permite audio de voz. Your browser does not support speech audio.');
+}
+
+let mediaRecorder=null,recordedChunks=[],activeStream=null;
+async function toggleRecording(){
+ const btn=$('recordBtn');
+ if(mediaRecorder&&mediaRecorder.state==='recording'){mediaRecorder.stop();btn.textContent='🎙️ Grabar otra vez 重新录音';return}
+ if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){msg('La grabación requiere un navegador compatible y permiso para usar el micrófono.');return}
+ try{
+  activeStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  recordedChunks=[];mediaRecorder=new MediaRecorder(activeStream);
+  mediaRecorder.ondataavailable=e=>{if(e.data.size)recordedChunks.push(e.data)};
+  mediaRecorder.onstop=()=>{
+   const blob=new Blob(recordedChunks,{type:mediaRecorder.mimeType||'audio/webm'});
+   $('recordedAudio').src=URL.createObjectURL(blob);$('recordingArea').classList.remove('hidden');
+   activeStream?.getTracks().forEach(t=>t.stop());activeStream=null;
+   btn.textContent='🎙️ Grabar otra vez 重新录音';
+   msg('Grabación lista. Pulsa reproducir para escucharte. 录音完成，可以回放。');
+  };
+  mediaRecorder.start();btn.textContent='⏹️ Detener 停止录音';msg('Grabando… habla en español. 正在录音，请说西班牙语。');
+ }catch(e){msg('No se pudo acceder al micrófono. Comprueba los permisos del navegador.');}
+}
+
+function saveFavorite(){
+ const q=questions[qi];if(!q)return;
+ const fav=JSON.parse(localStorage.getItem('spanishFavorites')||'[]');
+ if(fav.some(x=>x.prompt_es===q.prompt_es)){msg('Esta frase ya está en favoritos. 已收藏。');return}
+ fav.push({prompt_es:q.prompt_es,prompt_zh:q.prompt_zh,answer:q.answer,explanation_es:q.explanation_es||'',options:q.options||[]});
+ localStorage.setItem('spanishFavorites',JSON.stringify(fav));msg('Guardado en favoritos. 已加入收藏。');
+}
+
+function returnToMenu(){$('exerciseSection').classList.add('hidden');$('checkAnswer').classList.remove('hidden');$('checkAnswer').disabled=false;$('nextQuestion').classList.add('hidden');$('lessonSection').scrollIntoView({behavior:'smooth',block:'start'});clearMsg()}
+
+
+function readLocalLearningData(){
+ const progress=JSON.parse(localStorage.getItem('spanishProgress')||'{"answered":0,"correct":0,"completed":0,"byTopic":{}}');
+ const mistakes=JSON.parse(localStorage.getItem('spanishMistakes')||'[]');
+ const history=JSON.parse(localStorage.getItem('spanishAnswerHistory')||'[]');
+ return {progress,mistakes,history};
+}
+function classifyQuestion(q){
+ const s=((q.prompt_es||'')+' '+(q.explanation_es||'')).toLowerCase();
+ if(/preposici|por |para |con |de |en |a \\+|conectado a|compatible con|integración con/.test(s))return 'Preposiciones';
+ if(/ser |estar|soy |está |son |están |verbo|conjug|subjuntivo|infinitivo|cuesta|cuestan/.test(s))return 'Gramática y verbos';
+ if(/pantalla|tpv|kiosco|conectividad|sistema operativo|garantía|ficha técnica|pedido|plazo de entrega|distribuidor|instalación|fallo/.test(s))return 'Español técnico y comercial';
+ if(/correo|reunión|cliente|presupuesto|seguimiento|factura/.test(s))return 'Comunicación profesional';
+ return 'Vocabulario y comprensión';
+}
+function renderTeacherDiagnostics(){
+ const {progress,mistakes,history}=readLocalLearningData();
+ const byTopic=progress.byTopic||{};
+ const topics=Object.entries(byTopic).map(([key,v])=>({key,answered:v.answered||0,correct:v.correct||0,pct:v.answered?Math.round(v.correct/v.answered*100):0})).sort((a,b)=>a.pct-b.pct);
+ const errorCounts={};
+ mistakes.forEach(q=>{const cat=classifyQuestion(q);errorCounts[cat]=(errorCounts[cat]||0)+1});
+ const notes=localStorage.getItem('spanishTeacherNotes')||'';
+ const saved=$('teacherNotesInput');if(saved&&saved.value==='')saved.value=notes;
+ $('teacherNotesSaved').textContent=notes?'Nota guardada en este navegador.':'';
+ $('teacherDiagnostics').innerHTML=`<div class="grid"><article class="card"><h4>Respuestas registradas</h4><p class="big">${progress.answered||0}</p></article><article class="card"><h4>Precisión local</h4><p class="big">${progress.answered?Math.round((progress.correct||0)/progress.answered*100):0}%</p></article><article class="card"><h4>Errores pendientes</h4><p class="big">${mistakes.length}</p></article></div><h4>Resultados por tema</h4>${topics.length?topics.map(t=>`<div class="card"><b>${esc(t.key)}</b><p>${t.correct}/${t.answered} correctas · ${t.pct}%</p><progress max="100" value="${t.pct}" style="width:100%"></progress></div>`).join(''):'<p>Aún no hay resultados por tema en este navegador.</p>'}<h4>Tipos de error que conviene revisar</h4>${Object.keys(errorCounts).length?Object.entries(errorCounts).sort((a,b)=>b[1]-a[1]).map(([cat,n])=>`<p>• ${esc(cat)}: <b>${n}</b></p>`).join(''):'<p>Sin errores pendientes.</p>'}<h4>Errores individuales y número de fallos 错题与错误次数</h4>${mistakes.length?mistakes.slice().sort((a,b)=>(b.errorCount||1)-(a.errorCount||1)).map((q,i)=>`<div class="card"><div class="section-head"><div><b>${i+1}. ${esc(q.prompt_es||'Pregunta')}</b><p class="muted">${esc(q.prompt_zh||'')}</p></div><span class="pill">${q.errorCount||1} ${(q.errorCount||1)===1?'fallo':'fallos'}</span></div><p><b>Área:</b> ${esc(q.errorType||classifyQuestion(q))}</p><p><b>Respuesta del alumno:</b> ${esc(String(q.lastSelected??'No registrada'))}</p><p><b>Respuesta correcta:</b> ${esc(String(q.answer??''))}</p><p><b>Explicación:</b> ${esc(q.explanation_es||'Sin explicación disponible')}</p><p class="muted">Último fallo: ${esc(q.lastWrongAt?new Date(q.lastWrongAt).toLocaleString():'fecha no disponible')} · Aciertos en repaso: ${q.correctOnReview||0}/2</p><button class="secondary" data-review-error="${i}">Practicar este error 重练</button></div>`).join(''):'<p>No hay errores pendientes. Los fallos se mostrarán aquí cuando el alumno practique.</p>'}<h4>Historial reciente de respuestas</h4>${history.length?history.slice(-10).reverse().map(x=>`<div class="card"><b>${esc(x.category||'Práctica')}</b> · ${x.correct?'✅ Correcta':'❌ Incorrecta'}<p>${esc(x.prompt_es||'')}</p><p>Respondió: ${esc(String(x.selected??''))}</p><p>Correcta: ${esc(String(x.answer??''))}</p><small>${esc(x.date||'')}</small></div>`).join(''):'<p>Las respuestas recientes aparecerán aquí cuando se registren en este navegador.</p>'}`;
+ $('teacherDiagnostics').querySelectorAll('[data-review-error]').forEach(btn=>btn.addEventListener('click',()=>{
+   const idx=Number(btn.dataset.reviewError);
+   const item=mistakes.slice().sort((a,b)=>(b.errorCount||1)-(a.errorCount||1))[idx];
+   if(!item)return;
+   currentModule='mistakes';localExerciseMode=true;startLesson([item]);
+ }));
+}
+async function renderRemoteTeacherAttempts(){
+ if(!db||!currentUser||currentRole!=='teacher')return;
+ const {data,error}=await db.from('exercise_attempts').select('*').order('created_at',{ascending:false}).limit(100);
+ if(error){$('teacherStudentReport').textContent='No se pudieron leer intentos sincronizados. Comprueba las políticas RLS de exercise_attempts.';return}
+ if(!data||!data.length){$('teacherStudentReport').textContent='Todavía no hay intentos registrados en Supabase.';return}
+ const columns=Object.keys(data[0]);
+ $('teacherStudentReport').innerHTML=`<p>Últimos ${data.length} intentos registrados en Supabase.</p><div style="overflow:auto"><table><thead><tr>${columns.slice(0,6).map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${data.slice(0,30).map(row=>`<tr>${columns.slice(0,6).map(c=>`<td>${esc(String(row[c]??''))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+
+function showMainMenu(){
+ ['exerciseSection','profileSection','teacherSection','examSection'].forEach(id=>$(id)?.classList.add('hidden'));
+ $('lessonSection').classList.remove('hidden');
+ $('lessonSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showProfileDashboard(){
+ const st=JSON.parse(localStorage.getItem('spanishProgress')||'{"answered":0,"correct":0,"completed":0,"byTopic":{}}');
+ const wrong=JSON.parse(localStorage.getItem('spanishMistakes')||'[]');
+ const pct=st.answered?Math.round(st.correct/st.answered*100):0;
+ const placement=JSON.parse(localStorage.getItem('spanishPlacement')||'null');
+ const byTopic=Object.entries(st.byTopic||{}).map(([k,v])=>`<article class="card"><h3>${esc(k)}</h3><p>${v.correct||0}/${v.answered||0} aciertos · ${v.answered?Math.round(v.correct/v.answered*100):0}%</p></article>`).join('');const exam=JSON.parse(localStorage.getItem('spanishLastExam')||'null');$('profileDashboard').innerHTML=`<article class="card"><h3>Preguntas respondidas</h3><p class="big">${st.answered||0}</p></article><article class="card"><h3>Aciertos</h3><p class="big">${st.correct||0} · ${pct}%</p></article><article class="card"><h3>Errores pendientes</h3><p class="big">${wrong.length}</p></article><article class="card"><h3>Sesiones completadas</h3><p class="big">${st.completed||0}</p></article><article class="card"><h3>Último test de nivel</h3><p>${placement?esc(placement.level)+' ('+placement.pct+'%)':'Aún no realizado'}</p></article><article class="card"><h3>Último mini examen</h3><p>${exam?exam.correct+'/'+exam.total+' · '+exam.pct+'%':'Aún no realizado'}</p></article>${byTopic||'<article class="card"><h3>Progreso por tema</h3><p>Aún no hay datos por tema.</p></article>'}`;
+}
+function openExamBuilder(){
+ ['exerciseSection','profileSection','teacherSection'].forEach(id=>$(id)?.classList.add('hidden'));
+ $('lessonSection').classList.add('hidden');$('examSection').classList.remove('hidden');
+ $('examSummary').textContent='';$('examSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function startConfiguredExam(){
+ const cats=[...document.querySelectorAll('.examCategory:checked')].map(x=>x.value);
+ if(!cats.length){msg('Selecciona al menos una categoría.');return}
+ let pool=cats.flatMap(c=>(moduleData[c]||[]).map(q=>({...q,_category:c})));
+ if(!pool.length){msg('No hay preguntas en esas categorías.');return}
+ const type=$('examType').value;
+ if(type==='grammar')pool=pool.filter(q=>/significa|cómo|qué|cuesta|preguntar|puedes/i.test(q.prompt_es)).concat(pool);
+ if(type==='translation')pool=pool.filter(q=>/significa|means|significa/i.test(q.prompt_es)).concat(pool);
+ pool.sort(()=>Math.random()-.5);
+ const count=Math.min(Number($('examCount').value)||10,pool.length);
+ examQuestions=pool.slice(0,count);examMode=true;examCorrection=$('examCorrection').value;examResults=[];
+ currentModule='exam';localExerciseMode=true;startLesson(examQuestions);
+ $('examSection').classList.add('hidden');
+}
+
+function msg(t){$('message').textContent=t;$('message').classList.remove('hidden')}function clearMsg(){$('message').classList.add('hidden')}function openAuth(){$('authPanel').classList.remove('hidden');$('email').focus()}function closeAuth(){$('authPanel').classList.add('hidden')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function startLesson(qs){questions=qs&&qs.length?qs:demoQuestions;qi=0;$('checkAnswer').classList.remove('hidden');$('exerciseSection').classList.remove('hidden');$('exerciseSection').scrollIntoView({behavior:'smooth'});renderQ()}
+function renderQ(){const q=questions[qi];selected=null;answered=false;$('recordingArea').classList.add('hidden');$('recordedAudio').removeAttribute('src');$('recordBtn').textContent='🎙️ Grabar voz 录音';$('answerFeedback').innerHTML='';$('nextQuestion').classList.add('hidden');$('checkAnswer').disabled=false;const note=studyNotes[currentModule]||studyNotes.greetings;$('questionArea').innerHTML=`<div class="status">Pregunta ${qi+1} / ${questions.length}</div><div class="question">${esc(q.prompt_es)}</div><div class="muted">${esc(q.prompt_zh)}</div><div class="card"><b>${esc(note.title)}</b><p>${esc(note.body)}</p>${q.example_es?`<p><b>Ejemplo:</b> ${esc(q.example_es)}<br>${esc(q.example_zh||'')}</p>`:''}</div><div class="options">${(q.options||[]).map(o=>`<button class="option" data-a="${esc(o)}">${esc(o)}</button>`).join('')}</div>`;$('questionArea').querySelectorAll('.option').forEach(b=>b.onclick=()=>{if(answered)return;selected=b.dataset.a;$('questionArea').querySelectorAll('.option').forEach(x=>x.classList.toggle('selected',x===b))})}
+async function check(){if(selected===null){$('answerFeedback').innerHTML='<div class="feedback bad">Elige una respuesta. 请先选择答案。</div>';return}const q=questions[qi];let ok=false;if(localExerciseMode||demo||!db||!currentUser)ok=String(selected).trim().toLowerCase()===String(q.answer||'').trim().toLowerCase();else{const {data,error}=await db.rpc('submit_exercise_answer',{p_exercise_id:q.id,p_answer:String(selected)});if(error){$('answerFeedback').innerHTML='<div class="feedback bad">No se pudo comprobar: '+esc(error.message)+'</div>';return}ok=data===true}answered=true;if(currentModule==='placement'&&ok)placementCorrect++;
+if(localExerciseMode||demo){
+ const st=JSON.parse(localStorage.getItem('spanishProgress')||'{"answered":0,"correct":0,"completed":0,"byTopic":{}}');
+ st.answered++;if(ok)st.correct++;st.lastStudyDate=new Date().toISOString().slice(0,10);
+ const topic=currentModule||'mixed';
+ st.byTopic=st.byTopic||{};st.byTopic[topic]=st.byTopic[topic]||{answered:0,correct:0};st.byTopic[topic].answered++;if(ok)st.byTopic[topic].correct++;
+ localStorage.setItem('spanishProgress',JSON.stringify(st));
+ const mistakes=JSON.parse(localStorage.getItem('spanishMistakes')||'[]');
+ const history=JSON.parse(localStorage.getItem('spanishAnswerHistory')||'[]');
+ history.push({prompt_es:q.prompt_es,prompt_zh:q.prompt_zh,selected:String(selected),answer:q.answer,correct:ok,category:currentModule,explanation_es:q.explanation_es||'',date:new Date().toLocaleString()});
+ localStorage.setItem('spanishAnswerHistory',JSON.stringify(history.slice(-500)));
+ if(!ok){const cat=classifyQuestion(q);const existing=mistakes.find(x=>x.prompt_es===q.prompt_es);if(existing){existing.lastWrongAt=new Date().toISOString();existing.errorCount=(existing.errorCount||1)+1;existing.lastSelected=String(selected)}else mistakes.push({prompt_es:q.prompt_es,prompt_zh:q.prompt_zh,answer:q.answer,options:q.options,explanation_es:q.explanation_es||'',explanation_zh:q.explanation_zh||'',category:currentModule,errorType:cat,errorCount:1,lastSelected:String(selected),lastWrongAt:new Date().toISOString()});}
+ else {const idx=mistakes.findIndex(x=>x.prompt_es===q.prompt_es);if(idx>=0){mistakes[idx].correctOnReview=(mistakes[idx].correctOnReview||0)+1;if(mistakes[idx].correctOnReview>=2)mistakes.splice(idx,1)}}
+ localStorage.setItem('spanishMistakes',JSON.stringify(mistakes));
+}
+$('answerFeedback').innerHTML=`<div class="feedback ${ok?'good':'bad'}">${ok?'¡Correcto! 太棒了！':'No es correcto. 再试一次！'}<br>${esc(q.explanation_es||'')} ${esc(q.explanation_zh||'')}</div>`;$('checkAnswer').disabled=true;$('nextQuestion').classList.remove('hidden')}
+async function loadLesson(id){currentModule='databaseLesson';localExerciseMode=false;const {data,error}=await db.from('exercises').select('id,prompt_es,prompt_zh,options,explanation_es,explanation_zh,sort_order').eq('lesson_id',id).order('sort_order');if(error){msg('Error al cargar ejercicios: '+error.message);return}startLesson((data||[]).map(x=>({...x,options:Array.isArray(x.options)?x.options:[]})))}
+async function loadLessons(){
+ const {data,error}=await db.from('lessons').select('id,title_es,title_zh,description_es,description_zh,category,sort_order').eq('published',true).order('sort_order');
+ if(error){msg('No se pudieron cargar lecciones: '+error.message);return}
+ if(!data?.length)return;
+ const dbCards=data.map((l,i)=>`<article class="card"><div class="emoji">${l.category==='business'?'🤝':'👋'}</div><span class="pill">${l.category==='business'?'Español comercial':'Lección '+(i+1)}</span><h3>${esc(l.title_es)}</h3><p>${esc(l.title_zh)} · ${esc(l.description_es)}</p><button class="secondary" data-id="${l.id}">Empezar 开始</button></article>`).join('');
+ $('lessonGrid').insertAdjacentHTML('beforeend',dbCards);
+ $('lessonGrid').querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>loadLesson(b.dataset.id));
+}
+async function refresh(){if(!db){demo=true;$('userLabel').textContent='Vista previa';msg('Vista previa activa. Para conectar cuentas y guardar progreso, configura URL y Publishable key en este archivo.');return}const {data}=await db.auth.getSession();currentUser=data.session?.user||null;if(!currentUser){$('userLabel').textContent='Sesión no iniciada';$('authBtn').textContent='Entrar';return}demo=false;$('userLabel').textContent='Conectado';$('authBtn').textContent='Mi cuenta';closeAuth();const {data:p,error}=await db.from('profiles').select('display_name,role').eq('id',currentUser.id).maybeSingle();if(error){msg('Error de perfil: '+error.message);return}currentRole=p?.role||'learner';$('profileDetails').textContent=`${p?.display_name||currentUser.email} · ${currentRole==='teacher'?'Profesora 老师':'Alumno 学生'}`;$('profileSection').classList.remove('hidden');if(currentRole==='teacher'){$('teacherSection').classList.remove('hidden');const a=await db.from('lessons').select('*',{count:'exact',head:true});const b=await db.from('exercise_attempts').select('*',{count:'exact',head:true});$('teacherLessonCount').textContent=a.error?'No disponible':String(a.count??0);$('teacherAttemptCount').textContent=b.error?'No disponible':String(b.count??0);renderTeacherDiagnostics();await renderRemoteTeacherAttempts()}await loadLessons()}
+$('placementTopBtn').onclick=()=>startModule('placement');$('examTopBtn').onclick=openExamBuilder;
+$('authBtn').onclick=()=>{if(currentUser){showProfileDashboard();$('profileSection').classList.remove('hidden');$('teacherSection').classList.add('hidden');$('lessonSection').classList.add('hidden');$('exerciseSection').classList.add('hidden');$('examSection').classList.add('hidden');$('profileSection').scrollIntoView({behavior:'smooth'});}else openAuth()};
+$('profileBackBtn').onclick=showMainMenu;
+$('profileReviewBtn').onclick=()=>startModule('mistakes');
+$('profileProgressBtn').onclick=()=>startModule('progress');
+$('teacherRefreshBtn')?.addEventListener('click',()=>refresh());$('teacherErrorsRefreshBtn')?.addEventListener('click',async()=>{renderTeacherDiagnostics();await renderRemoteTeacherAttempts()});$('saveTeacherNotesBtn')?.addEventListener('click',()=>{localStorage.setItem('spanishTeacherNotes',$('teacherNotesInput').value);$('teacherNotesSaved').textContent='Nota guardada.'});
+$('examBackBtn').onclick=showMainMenu;
+$('startExamBtn').onclick=startConfiguredExam;$('startBtn').onclick=()=>{if(!db||!currentUser)startLesson();else $('lessonSection').scrollIntoView({behavior:'smooth'})};$('businessBtn').onclick=()=>{$('lessonSection').scrollIntoView({behavior:'smooth'});setTimeout(()=>{const c=document.querySelector('[data-module="norbitouch"]');if(c)c.scrollIntoView({behavior:'smooth',block:'center'})},350)};document.querySelectorAll('.demoLesson').forEach(b=>b.onclick=()=>{localExerciseMode=true;startModule('greetings')});$('cancelAuth').onclick=closeAuth;
+$('loginBtn').onclick=async()=>{if(!db){msg('Configura primero la conexión de Supabase.');return}const {error}=await db.auth.signInWithPassword({email:$('email').value,password:$('password').value});if(error)msg(error.message);else{clearMsg();await refresh()}};
+$('signupBtn').onclick=async()=>{if(!db){msg('Configura primero la conexión de Supabase.');return}const {error}=await db.auth.signUp({email:$('email').value,password:$('password').value,options:{data:{display_name:$('email').value.split('@')[0]}}});if(error)msg(error.message);else msg('Cuenta creada. Si se requiere confirmar el correo, revisa tu bandeja de entrada.')};
+$('logoutBtn').onclick=async()=>{if(db)await db.auth.signOut();currentUser=null;currentRole=null;$('profileSection').classList.add('hidden');$('teacherSection').classList.add('hidden');$('userLabel').textContent='Sesión no iniciada';$('authBtn').textContent='Entrar';msg('Sesión cerrada. 已退出登录。')};
+$('checkAnswer').onclick=check;$('nextQuestion').onclick=()=>{if(qi<questions.length-1){qi++;renderQ()}else{if(localExerciseMode||demo){const st=JSON.parse(localStorage.getItem('spanishProgress')||'{"answered":0,"correct":0,"completed":0}');st.completed++;localStorage.setItem('spanishProgress',JSON.stringify(st))}if(examMode){const correct=examResults.filter(x=>x.correct).length;const pct=Math.round(correct/Math.max(1,examResults.length)*100);localStorage.setItem('spanishLastExam',JSON.stringify({date:new Date().toISOString(),correct,total:examResults.length,pct,results:examResults}));$('questionArea').innerHTML=`<h3>Resultado del mini examen 考试结果</h3><p><b>${correct}/${examResults.length}</b> respuestas correctas · ${pct}%</p><p>${pct>=80?'¡Muy bien!':'Repasa las explicaciones y vuelve a intentarlo.'}</p>${examCorrection==='end'?examResults.map((r,i)=>`<div class="card"><b>${i+1}. ${esc(r.question)}</b><p>Tu respuesta: ${esc(r.selected)}</p><p>Respuesta correcta: <b>${esc(r.answer)}</b></p><p>${esc(r.explanation)}</p><p>${r.correct?'✅ Correcto':'❌ Incorrecto'}</p></div>`).join(''):''}<div class="actions"><button class="secondary" id="examAgainBtn">Nuevo examen</button><button class="ghost" id="examMenuBtn">Volver al menú</button></div>`;setTimeout(()=>{const a=$('examAgainBtn');if(a)a.onclick=openExamBuilder;const b=$('examMenuBtn');if(b)b.onclick=showMainMenu},0);examMode=false;
+ }else if(currentModule==='placement'){
+ const total=questions.length, pct=total?Math.round(placementCorrect/total*100):0;
+ const level=pct>=85?'A2 inicial':pct>=60?'A1 consolidado':pct>=35?'A1 inicial':'Pre-A1';
+ localStorage.setItem('spanishPlacement',JSON.stringify({level,pct,correct:placementCorrect,total,date:new Date().toISOString()}));
+ $('questionArea').innerHTML=`<h3>Resultado de tu test 测试结果</h3><p>Respuestas correctas: <b>${placementCorrect}/${total}</b> (${pct}%)</p><p>Tu nivel orientativo es: <b>${level}</b></p><p>${pct>=85?'Puedes empezar con situaciones de nivel A2 y vocabulario profesional.':pct>=60?'Te conviene consolidar A1 y practicar situaciones cotidianas.':pct>=35?'Empieza por las bases de A1 y repite las lecciones de saludos y situaciones diarias.':'Te recomendamos empezar desde cero con frases cortas y vocabulario básico.'}</p><p class="muted">Este test es orientativo, no equivale a una certificación oficial.</p><div class="actions"><button class="secondary" id="retakePlacement">Repetir test 重新测试</button><button class="ghost" id="backFromResult">Volver al menú 返回菜单</button></div>`;
+ setTimeout(()=>{const r=$('retakePlacement');if(r)r.onclick=()=>startModule('placement');const b=$('backFromResult');if(b)b.onclick=returnToMenu},0);
+ }else{
+ $('questionArea').innerHTML='<h3>¡Lección terminada! 课程完成！ 🎉</h3><p>Buen trabajo. Sigue practicando un poco cada día.</p><div class="actions"><button class="secondary" id="repeatModuleBtn">Repetir este bloque 再练一次</button><button class="ghost" id="backFromComplete">Volver al menú 返回菜单</button></div>';
+ setTimeout(()=>{const r=$('repeatModuleBtn');if(r)r.onclick=()=>startModule(currentModule);const b=$('backFromComplete');if(b)b.onclick=returnToMenu},0);
+ }
+ $('answerFeedback').innerHTML='';$('nextQuestion').classList.add('hidden');$('checkAnswer').classList.add('hidden')}};$('closeLesson').onclick=returnToMenu;
+document.querySelectorAll('.moduleBtn').forEach(b=>b.addEventListener('click',()=>{localExerciseMode=true;startModule(b.dataset.module)}));
+$('listenBtn').addEventListener('click',speakCurrent);$('recordBtn').addEventListener('click',toggleRecording);
+$('favoriteBtn').addEventListener('click',saveFavorite);
+$('closeLesson').addEventListener('click',()=>{localExerciseMode=false;returnToMenu()});
+if(db){db.auth.onAuthStateChange(()=>setTimeout(refresh,0));refresh()}else refresh();
 </script></body></html>
